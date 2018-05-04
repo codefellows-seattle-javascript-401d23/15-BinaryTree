@@ -22,23 +22,23 @@
   * **__test__/** -- directory for holding your programs unit and integration tests
   
 #### Testing
-* write at least three test assertions for each method of the Binary Tree Data Structure
+[ ] write at least three test assertions for each method of the Binary Tree Data Structure
 * organize your tests into appropriate describe/test blocks for test output readability
 
 #### Feature Tasks  
-* Implement an **in-order** traversal function that returns a string of the visited nodes.
+[ ] Implement an **in-order** traversal function that returns a string of the visited nodes.
   * For example : `6,8,7,9,2,1,4,3,5`
 
 ####  Documentation
-  * in your README, write documentation for you data structures
-  * your documentation should includes code block useage examples
+  [ ] in your README, write documentation for you data structures
+  [ ] your documentation should includes code block useage examples
   * provide instructions for:
-    * installing and using your data structure
-    * accessing each method
-    * running your tests
+    [ ] installing and using your data structure
+    [ ] accessing each method
+    [ ] running your tests
 
 #### Rubric:
-  * Tests: 2pts
-  * Passes linter: 1pts
-  * Completed Data Structure: 5pts
-  * Big-O notation: 2pt
+  [ ] Tests: 2pts
+  [ ] Passes linter: 1pts
+  [x] Completed Data Structure: 5pts
+  [ ] Big-O notation: 2pt

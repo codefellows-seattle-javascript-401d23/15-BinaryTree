@@ -2,7 +2,7 @@
 
 import BinaryTree from './lib/binary-tree';
 import Node from './lib/node';
-import { preOrderTraversal, postOrderTraversal } from "./lib/traversals";
+import { inOrderTraversal } from "./lib/traversals";
 
 const one = Node(1);
 const two = Node(2);
@@ -13,22 +13,24 @@ const six = Node(6);
 const seven = Node(7);
 const eight = Node(8);
 const nine = Node(9);
+const tree = new BinaryTree(one);
 
-
+// this is the order of my tree
 one.left = two;
 one.right = three;
 
-three.left = four;
-three.right = five;
+two.left = four;
 
-two.left = six;
+three.left = five;
+three.right = six;
 
-six.right = seven;
+six.left = seven;
+six.right = eight;
 
-seven.left = eight;
-seven.right = nine;
+eight.right = nine;
 
-console.log('preOrder');
-console.log(preOrderTraversal(tree.root));
-console.log('postOrder');
-console.log(preOrderTraversal(tree.root));
+
+
+console.log('in Order');
+console.log(inOrderTraversal(tree.root));
+
