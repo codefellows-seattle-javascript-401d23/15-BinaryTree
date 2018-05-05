@@ -2,8 +2,8 @@
 
 import BinaryTree from './lib/binary-tree';
 import Node from './lib/node';
-import { preOrderTraversal, postOrderTraversal } from './lib/traversals';
-import { inOrderTraversal} from './lib/inOrderTraversal';
+// import { preOrderTraversal, postOrderTraversal } from './lib/traversals';
+import inOrderTraversal from './lib/inOrderTraversal';
 
 const one = new Node(1);
 const two = new Node(2);
@@ -30,11 +30,11 @@ six.right = eight;
 
 eight.right = nine;
 
-console.log('Pre-Order');
-preOrderTraversal(tree.root);
+// console.log('Pre-Order');
+// preOrderTraversal(tree.root);
+//
+// console.log('Post-Order');
+// postOrderTraversal(tree.root);
 
-console.log('Post-Order');
-postOrderTraversal(tree.root);
-
-console.log('in-Order');
+// console.log('in-Order');
 inOrderTraversal(tree.root);

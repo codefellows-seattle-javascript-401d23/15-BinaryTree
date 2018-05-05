@@ -9,7 +9,7 @@ const preOrderTraversal = (rootNode) => {
   if (!rootNode) {
     return undefined;
   }
-  console.log(`visting a node with value ${rootNode.value}`);
+  // console.log(`visting a node with value ${rootNode.value}`);
   preOrderTraversal(rootNode.left);
   preOrderTraversal(rootNode.right);
   return undefined;
@@ -22,10 +22,9 @@ const postOrderTraversal = (rootNode) => {
   }
   postOrderTraversal(rootNode.left);
   postOrderTraversal(rootNode.right);
-  console.log(`visting a node with value ${rootNode.value}`);
+  // console.log(`visting a node with value ${rootNode.value}`);
   return undefined;
 };
-
 
 
 // const inOrderTraversal = (rootNode) => {

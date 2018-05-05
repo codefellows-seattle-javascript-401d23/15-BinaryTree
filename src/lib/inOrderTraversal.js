@@ -7,10 +7,10 @@ const inOrderTraversal = (rootNode) => {
     return undefined;
   }
   inOrderTraversal(rootNode.left);
-  console.log(`visting a node with value ${rootNode.value}`);
   str += rootNode.value;
   inOrderTraversal(rootNode.right);
+  // console.log(str);
   return str;
 };
 
-export { inOrderTraversal };
+export default inOrderTraversal;
