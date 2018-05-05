@@ -33,12 +33,12 @@
   [ ] in your README, write documentation for you data structures
   [ ] your documentation should includes code block useage examples
   * provide instructions for:
-    [ ] installing and using your data structure
+    [] installing and using your data structure
     [ ] accessing each method
     [ ] running your tests
 
 #### Rubric:
   [ ] Tests: 2pts
-  [ ] Passes linter: 1pts
+  [x] Passes linter: 1pts
   [x] Completed Data Structure: 5pts
   [ ] Big-O notation: 2pt

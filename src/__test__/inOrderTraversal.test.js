@@ -34,14 +34,10 @@ describe('Testing inOrderTraversal', () => {
     expect(inOrderTraversal(tree.root)).toEqual('421537689');
   });
   test('testing for the type of output to be a string', () => {
-    expect(inOrderTraversal(tree.root)).toBeType('string');
+    expect(typeof (inOrderTraversal(tree.root))).toEqual('string');
   });
   test('testing for a undefined Binary Tree', () => {
     tree.root = null;
     expect(inOrderTraversal(tree.root)).toEqual(undefined);
   });
 });
-
-// toEqual
-//
-// typeof = 'string'
