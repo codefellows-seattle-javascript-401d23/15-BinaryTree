@@ -7,11 +7,6 @@
     "test": "eslint . && jest --coverage --forceExit --runInBand",
     "lint": "eslint ."
   },
-  "jest": {
-    "setupFiles": [
-      "<rootDir>/src/__test__/lib/test.env.js"
-    ]
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
