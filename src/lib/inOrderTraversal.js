@@ -9,7 +9,7 @@ const inOrderTraversal = (rootNode) => {
   inOrderTraversal(rootNode.left);
   str += rootNode.value;
   inOrderTraversal(rootNode.right);
-  // console.log(str);
+  // console.log(str)
   return str;
 };
 

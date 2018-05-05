@@ -2,9 +2,13 @@
 
 import BinaryTree from './lib/binary-tree';
 import Node from './lib/node';
-// import { preOrderTraversal, postOrderTraversal } from './lib/traversals';
-import inOrderTraversal from './lib/inOrderTraversal';
 
+// STEP 1.  Un-comment the preferred Binary Tree method.
+import inOrderTraversal from './lib/inOrderTraversal';
+// import preOrderTraversal from './lib/traversals';
+// import postOrderTraversal from './lib/traversals';
+
+// STEP 2. add or remove Nodes if needed.
 const one = new Node(1);
 const two = new Node(2);
 const three = new Node(3);
@@ -16,7 +20,7 @@ const eight = new Node(8);
 const nine = new Node(9);
 const tree = new BinaryTree(one);
 
-// this is the order of my tree
+// STEP 3. Manually set the order of the Binary tree below.
 one.left = two;
 one.right = three;
 
@@ -30,11 +34,7 @@ six.right = eight;
 
 eight.right = nine;
 
-// console.log('Pre-Order');
-// preOrderTraversal(tree.root);
-//
-// console.log('Post-Order');
-// postOrderTraversal(tree.root);
-
-// console.log('in-Order');
+// STEP 4. Un-comment the SAME preferred Binary Tree method as above.
 inOrderTraversal(tree.root);
+// preOrderTraversal(tree.root);
+// postOrderTraversal(tree.root);
