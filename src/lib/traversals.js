@@ -14,7 +14,7 @@ const preOrderTraversal = (rootNode) => {
   }
   // pre-order is root - left - right
   // -----------------
-  console.log(`Visiting a node with value ${rootNode.value}`);
+  // console.log(`Visiting a node with value ${rootNode.value}`);
   preOrderString += rootNode.value;
   // -----------------
   preOrderTraversal(rootNode.left); // rootNode.left is a is a sub-tree

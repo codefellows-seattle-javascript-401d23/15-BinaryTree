@@ -29,19 +29,40 @@ seven.left = eight;
 seven.right = nine;
 
 // console.log('Pre-Order Traversal');
-// preOrderTraversal(mockTree.root);
-//
+preOrderTraversal(mockTree.root);
+
 // console.log('Post-Order Traversal');
-// postOrderTraversal(mockTree.root);
-//
+postOrderTraversal(mockTree.root);
+
 // console.log('In-Order Traversal');
-// inOrderTraversal(mockTree.root);
+inOrderTraversal(mockTree.root);
 
 describe('Binary Tree Methods', () => {
   test('Pre-Order Traversal', () => {
     expect(preOrderTraversal(mockTree)).toEqual('126789345undefined');
   });
+  test('Pre-Order Traversal data type', () => {
+    expect(typeof preOrderTraversal(mockTree)).toEqual('string');
+  });
+  test('Pre-Order Traversal not null', () => {
+    expect(preOrderTraversal(mockTree)).not.toBe(null);
+  });
   test('Post-Order Traversal', () => {
     expect(postOrderTraversal(mockTree)).toEqual('897624531undefined');
+  });
+  test('Post-Order Traversal data type', () => {
+    expect(typeof postOrderTraversal(mockTree)).toEqual('string');
+  });
+  test('Post-Order Traversal not null', () => {
+    expect(postOrderTraversal(mockTree)).not.toBe(null);
+  });
+  test('In-Order Traversal', () => {
+    expect(inOrderTraversal(mockTree)).toEqual('687921435undefined');
+  });
+  test('In-Order Traversal data type', () => {
+    expect(typeof inOrderTraversal(mockTree)).toEqual('string');
+  });
+  test('In-Order Traversal not null', () => {
+    expect(inOrderTraversal(mockTree)).not.toBe(null);
   });
 });
