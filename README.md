@@ -1,18 +1,14 @@
 Lab 15- Binary Tree Data Structure
-====
-  
-#### Testing
-* write at least three test assertions for each method of the Binary Tree Data Structure
-* organize your tests into appropriate describe/test blocks for test output readability
 
-#### Feature Tasks  
+
+#### Feature Task
 * Implement an **in-order** traversal function that returns a string of the visited nodes.
   * For example : `6,8,7,9,2,1,4,3,5`
 
 ####  Documentation
 
 Following function has a Big O of O(n) an in order traversal visits each node once:
-//
+```
 let inOrderString = '';
 const inOrderTraversal = (rootNode) => {
   if (!rootNode) {
@@ -25,10 +21,10 @@ const inOrderTraversal = (rootNode) => {
   return inOrderString;
 };
 
-//
+```
 
 Add the following to your package.json file:
-//
+```
 {
   "name": "11-",
   "version": "1.0.0",
@@ -68,7 +64,7 @@ Add the following to your package.json file:
     "winston": "^3.0.0-rc4"
   }
 }
-//
+```
 
 In CLI enter the following:
  npm init
