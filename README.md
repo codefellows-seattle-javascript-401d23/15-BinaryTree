@@ -6,12 +6,6 @@ Lab 15- Binary Tree Data Structure
 
 These files create a binary tree data structure and provide functions for traversing a tree by pre-order, post-order, and in-order traversal.
 
-**Big O**
-
-Each traversal function is 
-* Time - 0(N), where N is the number of nodes in the tree.
-* Space - 0(1), because the tree is created outside the traversal function, and the traversal function does not use any significant extra space.
-
 **Getting Started**
 
 Import the following requirements:
