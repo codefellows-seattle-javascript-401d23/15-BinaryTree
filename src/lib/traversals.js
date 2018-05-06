@@ -7,7 +7,6 @@ let inOrderString = '';
 
 // time - 0(N) where n is the number of nodes
 // space - 0(H) where h is the height if the tree
-
 const preOrderTraversal = (rootNode) => {
   if (!rootNode) {
     return preOrderString;
