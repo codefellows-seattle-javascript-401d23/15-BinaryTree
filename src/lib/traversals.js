@@ -1,7 +1,7 @@
 'use strict';
 
 // Time O(N), where N is number of nodes in the tree
-// Space O(1)
+// Space O(H) where H is the height of the tree
 const preOrderTraversal = (rootNode, treeValues) => {
   if (!rootNode) {
     return undefined;
@@ -13,7 +13,7 @@ const preOrderTraversal = (rootNode, treeValues) => {
 };
 
 // Time O(N), where N is number of nodes in the tree
-// Space O(1)
+// Space O(H) where H is the height of the tree
 const postOrderTraversal = (rootNode, treeValues) => {
   if (!rootNode) {
     return undefined;
@@ -25,7 +25,7 @@ const postOrderTraversal = (rootNode, treeValues) => {
 };
 
 // Time O(N), where N is number of nodes in the tree
-// Space O(1)
+// Space O(H) where H is the height of the tree
 const inOrderTraversal = (rootNode, treeValues) => {
   if (!rootNode) {
     return undefined;
