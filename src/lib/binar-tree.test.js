@@ -33,4 +33,7 @@ describe(' testing for the right order', () => {
     const noTree = new BinaryTree(null);
     expect(inOrderTraversal(noTree.root)).toBe(undefined);
   });
+  test('checking if displays a string', () => {
+    expect(typeof inOrderTraversal(tree.root)).toBe('string');
+  });
 });
