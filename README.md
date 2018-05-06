@@ -1,44 +1,69 @@
-![cf](http://i.imgur.com/7v5ASc8.png) Lab 15- Binary Tree Data Structure
-====
-## To Submit this Assignment
-* Read this document entirely and estimate how long this assignment will take.
-* Work in a fork of this repository
-* Work in a branch on your fork
-* Protect your repository's `master` branch by activating `continuous-integration/travis-ci` status checks
-* Create a pull request from your `lab` + `<your name>` branch to your `master` branch
-* Open a pull request to this repository
-* Submit on canvas a question and observation,your original estimate, how long you spent, and a link to your pull request
+#Lab 15 Binary-Trees
 
-## Requirements
-#### Configuration
-<!-- list of files, configurations, tools, etc that are required -->
-  Your lab directory must include
-  * **README.md** -- with a documentation about your lab
-  * **.gitignore** -- with a robust .gitignore
-  * **.eslintrc** -- with the class .eslintrc file
-  * **.eslintignore** -- with the class .eslintignore
-  * **.package.json** -- with all dependencies and dev-dependencies
-  * **lib/** -- directory for holding your programs helper modules
-  * **__test__/** -- directory for holding your programs unit and integration tests
-  
-#### Testing
-* write at least three test assertions for each method of the Binary Tree Data Structure
-* organize your tests into appropriate describe/test blocks for test output readability
+author: Josiah Green
 
-#### Feature Tasks  
-* Implement an **in-order** traversal function that returns a string of the visited nodes.
-  * For example : `6,8,7,9,2,1,4,3,5`
+version: 1.0.0
 
-####  Documentation
-  * in your README, write documentation for you data structures
-  * your documentation should includes code block useage examples
-  * provide instructions for:
-    * installing and using your data structure
-    * accessing each method
-    * running your tests
+## Overview
+This program implements a binary-tree datastructure that utilizes three methods for traversing the structure.
 
-#### Rubric:
-  * Tests: 2pts
-  * Passes linter: 1pts
-  * Completed Data Structure: 5pts
-  * Big-O notation: 2pt
+## How to use
+Functions that are included are in-order, pre-order, and post-order. These functions use recursion to call on themselves and return a node value into the string of values during each step of the tree.
+ 
+#### inOrderTraversal(rootNode)
+This function traverses the tree in order of left, root, right.
+
+example:
+
+The inOrderTraversal function takes in a root node and traverses down to the left until a node does not exist on the left, the function then records the root value. Then, If there is a right node, it traverses down and it checks that node for a left. If there is no left it traverses back up to the previous node, returning the root and checking if it has a right to node to run the function on. 
+
+#### preOrderTraversal(rootNode)
+This function traverses the tree in order of root, left, right.
+
+#### postOrderTraversal(rootNode)
+This function traverses the tree in order of left, right, root.
+
+## Testing
+
+Testing can be accomplished by running the following code in the root of your repo ```npm run test```.
+
+Start by importing all necessary modules for the test to utilize. This program utilizes ES6 import/exports, review docs for requiring in modules in any pre existing versions.
+
+```import Node from '../lib/node';
+import { preOrderTraversal, postOrderTraversal, inOrderTraversal } from '../lib/traversals';
+import BinaryTree from '../lib/binary-tree';
+```
+
+Next you need to create a mock tree that the functions can traverse down, this is achieved by creating multiple new nodes and assigning them left/right values.
+
+```let binaryTree = null;
+
+const one = new Node(1);
+const two = new Node(2);
+const three = new Node(3);
+const four = new Node(4);
+const five = new Node(5);
+const six = new Node(6);
+const seven = new Node(7);
+const eight = new Node(8);
+const nine = new Node(9);
+
+one.left = two;
+one.right = three;
+three.left = four;
+three.right = five;
+two.left = six;
+six.right = seven;
+seven.left = eight;
+seven.right = nine;
+
+describe('Testing binary tree traversal', () => {
+  test('#preOrder should return in order of root, left, right', () => {
+    binaryTree = new BinaryTree(one);
+    expect(preOrderTraversal(binaryTree.root)).toEqual('126789345');
+  });
+});
+```
+
+A successful test should give a ```PASS``` flag. 
+
