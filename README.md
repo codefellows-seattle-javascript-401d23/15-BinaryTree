@@ -1,44 +1,80 @@
-![cf](http://i.imgur.com/7v5ASc8.png) Lab 15- Binary Tree Data Structure
-====
-## To Submit this Assignment
-* Read this document entirely and estimate how long this assignment will take.
-* Work in a fork of this repository
-* Work in a branch on your fork
-* Protect your repository's `master` branch by activating `continuous-integration/travis-ci` status checks
-* Create a pull request from your `lab` + `<your name>` branch to your `master` branch
-* Open a pull request to this repository
-* Submit on canvas a question and observation,your original estimate, how long you spent, and a link to your pull request
+# Lab 15 - Binary Tree Data Structure
 
-## Requirements
-#### Configuration
-<!-- list of files, configurations, tools, etc that are required -->
-  Your lab directory must include
-  * **README.md** -- with a documentation about your lab
-  * **.gitignore** -- with a robust .gitignore
-  * **.eslintrc** -- with the class .eslintrc file
-  * **.eslintignore** -- with the class .eslintignore
-  * **.package.json** -- with all dependencies and dev-dependencies
-  * **lib/** -- directory for holding your programs helper modules
-  * **__test__/** -- directory for holding your programs unit and integration tests
+##Overview
+- This is a lab assignment from Code Fellows 401
+Javascript.  The objective was to learn about Binary Trees by building a binary tree class, node class and a traversal class with three methods; pre-order, post-order and in-order.  
+
+##Getting Started
+- In order to get started with this code please fork and clone the repo.  You will need a number of dependencies in order to run this project.  See the package.json for a list of dependencies.  This project runs in node.js and you can access it's functionality by running the index file in node.
   
-#### Testing
-* write at least three test assertions for each method of the Binary Tree Data Structure
-* organize your tests into appropriate describe/test blocks for test output readability
+##Architecture
+- This project is built using Javascript ES6 with transpilation using Babel for ES6.  The main entry point of the code is the index.js.  The project also includes several developer dependencies listed in the package.json. 
 
-#### Feature Tasks  
-* Implement an **in-order** traversal function that returns a string of the visited nodes.
-  * For example : `6,8,7,9,2,1,4,3,5`
+###Binary Traversal Methods
 
-####  Documentation
-  * in your README, write documentation for you data structures
-  * your documentation should includes code block useage examples
-  * provide instructions for:
-    * installing and using your data structure
-    * accessing each method
-    * running your tests
+####preOrderTraversal() 
+- This method recursively returns the value of each node in the tree starting with the root followed by the left and then right.  If there is no tree data, the function will return an undefined.
 
-#### Rubric:
-  * Tests: 2pts
-  * Passes linter: 1pts
-  * Completed Data Structure: 5pts
-  * Big-O notation: 2pt
+````
+const preOrderTraversal = (rootNode) => {
+  if (!rootNode) {
+    return preOrderString;
+  }
+  // pre-order is root - left - right
+  // -----------------
+  console.log(`Visiting a node with value ${rootNode.value}`);
+  preOrderString += rootNode.value;
+  // -----------------
+  preOrderTraversal(rootNode.left); // rootNode.left is a is a sub-tree
+  preOrderTraversal(rootNode.right);
+  return preOrderString;
+};
+````
+
+####postOrderTraversal()
+- This method recursively returns the value of each node in the tree starting with the left nodes, followed by the right nodes and the root nodes last.  If there is no tree then the function returns undefined.
+
+````
+const postOrderTraversal = (rootNode) => {
+  // post-order is left - right - root
+  if (!rootNode) {
+    return undefined;
+  }
+  postOrderTraversal(rootNode.left);
+  postOrderTraversal(rootNode.right);
+  // we won't visit root until we've visited all left and right nodes...remember this is recursive
+  // -------------------
+  // console.log(`Visiting a node with value ${rootNode.value}`);
+  postOrderString += rootNode.value;
+  // -------------------
+  return postOrderString;
+};
+````
+
+
+####inOrderTraversal()
+- This method recursively returns the value of each node in the tree starting with the left nodes, followed by the root nodes and finally the right nodes.  If there is no tree then the function will return undefined. 
+````
+const inOrderTraversal = (rootNode) => {
+  // in-order is left - root - right
+  if (!rootNode) {
+    return undefined;
+  }
+  inOrderTraversal(rootNode.left);
+  // console.log(`Visiting a node with value ${rootNode.value}`);
+  inOrderString += rootNode.value;
+  inOrderTraversal(rootNode.right);
+  return inOrderString;
+};
+````
+
+###Testing
+- The test module includes three unit tests for for traversal method including; ensuring the return value, the data type and that the function returns an output.
+
+###Change Log
+- 05-05-2018 12:00pm - Began work on project
+- 05-05-2018 1:30pm - all methods working 
+- 05-05-2018 9:00pm - added final tests and documentation
+
+##Credits and Collaborations
+- Thank you to Vinicio Sanchez for the demo code and David Stoll for advice on outputting the correct data type.
