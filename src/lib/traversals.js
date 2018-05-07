@@ -45,8 +45,12 @@ const inOrderTraversal = (rootNode) => {
     return undefined;
   }
   inOrderTraversal(rootNode.left);
+  if (inOrderString.charAt(-1) === undefined) {
+    inOrderString = rootNode.value;
+  } else {
+    inOrderString += rootNode.value;
+  }
   // console.log(`Visiting a node with value ${rootNode.value}`);
-  inOrderString += rootNode.value;
   inOrderTraversal(rootNode.right);
   return inOrderString;
 };
