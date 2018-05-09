@@ -1,5 +1,6 @@
 'use strict';
 
+let stringedPreOrder = '';
 // Time - O(N) where n is the number of nodes
 // Space - O(H) where h is the height of the tree
 const preOrderTraversal = (rootNode) => {
@@ -9,11 +10,11 @@ const preOrderTraversal = (rootNode) => {
   }
   //---------------------------------------------------------
   // Zachary - Here, I AM IN ROOT
-  console.log(`Visiting a node with value ${rootNode.value}`);
+  stringedPreOrder += `,${rootNode.value}`;
   //---------------------------------------------------------
   preOrderTraversal(rootNode.left); // rootNode.left is a sub-tree
   preOrderTraversal(rootNode.right);
-  return undefined;
+  return stringedPreOrder.replace(/^,/, '');
 };
 
 // Time - O(H) where n is the number of nodes
@@ -33,4 +34,22 @@ const postOrderTraversal = (rootNode) => {
   //---------------------------------------------------------
 };
 
-export { preOrderTraversal, postOrderTraversal };
+// turn this into my in-Order.
+let stringedInOrder = '';
+// Time - O(N) where n is the number of nodes
+// Space - O(H) where h is the height of the tree
+const inOrderTraversal = (rootNode) => {
+  // Zachary - Root - Left - Right
+  if (!rootNode) {
+    return undefined;
+  }
+  //---------------------------------------------------------
+  // Zachary - Here, I AM IN ROOT
+  inOrderTraversal(rootNode.left); // rootNode.left is a sub-tree
+  stringedInOrder += `,${rootNode.value}`;
+  //---------------------------------------------------------
+  inOrderTraversal(rootNode.right);
+  return stringedInOrder.replace(/^,/, '');
+};
+
+export { preOrderTraversal, postOrderTraversal, inOrderTraversal };
